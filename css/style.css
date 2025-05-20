@@ -1,0 +1,390 @@
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f9f2;
+    color: #2d2d2d;
+    line-height: 1.6;
+    padding-top: 80px; /* Adjust this value to match your header height */
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(220, 236, 193, 0.8); /* slightly translucent */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #2d2d2d;
+    font-weight: 500;
+  }
+  
+  .nav-links a:hover {
+    color: #5c8a34;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: url('../assets/images/forest.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;  /* Adjust height as needed */
+  }
+  
+  .hero-content {
+    position: absolute;
+    bottom: 5%;  /* adjusts the text placement to the base of the hero */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+  }
+
+  /* Overlay Cartoon Image */
+  .hero-cartoon {
+    position: absolute;
+    right: 20px;    /* adjust as needed */
+    bottom: 20px;   /* adjust as needed */
+    width: 200px;   /* adjust to control image size */
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Floating animation keyframes */
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
+  /* Responsive tweaks (if needed) */
+  @media (max-width: 768px) {
+    .hero {
+      height: 60vh; /* Adjust for smaller screens */
+    }
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Books Preview */
+  .books-preview {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .book-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .book-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .book-card img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  .book-card h3 {
+    margin-bottom: 0.5rem;
+    color: #3d3d3d;
+  }
+  
+  .book-card p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #ffcb77;
+    color: #2d2d2d;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .btn:hover {
+    background-color: #f4a261;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #dcedc1;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #2d2d2d;
+  }
+  
+  .footer-links a {
+    color: #2d2d2d;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  /* About Hero Section */
+  .about-hero {
+    position: relative;
+    background: url('../assets/images/abouthero.png') no-repeat center center;
+    background-size: cover;
+    height: 70vh; /* adjust height as needed */
+  }
+  
+  .about-hero-content {
+    position: absolute;
+    bottom: 10%; /* adjust placement as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+  }
+  
+  /* Optional: adjust cartoon image if needed */
+  .about-cartoon {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Keyframe animations for about page */
+  @keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  /* About page specific styles */
+  .about-content {
+    max-width: 900px;
+    margin: 3rem auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .about-cartoon {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .about-content h2 {
+    margin-bottom: 1.5rem;
+    color: #3d3d3d;
+  }
+
+  .about-content p {
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    color: #444;
+  }
+
+  .fun-facts {
+    text-align: left;
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .fun-facts li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+    list-style-type: "🍄 ";
+  }
+
+  .fun-facts li:hover {
+    animation: wiggle 0.5s ease;
+    cursor: pointer;
+  }
+
+  /* Books Hero Section */
+  .books-hero {
+    position: relative;
+    height: 50vh; /* adjust height as needed */
+    overflow: hidden;
+  }
+
+  .books-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Extras Hero Section */
+  .extras-hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 80px; /* for fixed navbar */
+    background: #f5f9f2;
+    padding: 2rem 0;
+  }
+
+  .extras-hero-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 0 0 24px 24px;
+  }
+
+  /* Extras cards grid */
+  .extras-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  /* Individual card */
+  .extra-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.08);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .extra-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.13);
+  }
+
+  .extra-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .extra-emoji {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+
+  .extra-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .extra-desc {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Fun button */
+  .fun-button {
+    display: block;
+    margin-top: 0.5rem;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .fun-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #fad0c4, #ff9a9e);
+  }
+
+  .contact-cartoon {
+    width: 80px;               /* Adjust the size as needed */
+    margin-left: 10px;         /* Space between text and icon */
+    vertical-align: middle;    /* Align with the heading text */
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .extras-cards {
+      gap: 1rem;
+    }
+    .extra-card {
+      width: 90vw;
+      max-width: 350px;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }

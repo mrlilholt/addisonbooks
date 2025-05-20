@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Addison Lilholt – Author</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">🍄 Addison Lilholt's Forest Of Stories 🍄</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="extras.html">Extras</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p>Explore the whimsical worlds of Addison Lilholt—author, forager, and joyful maker of environmental tales & more.</p>
+      </div>
+      <img src="assets/images/addison-cartoon.png" alt="Cartoon Addison" class="hero-cartoon">
+    </section>
+
+    <section class="books-preview">
+      <h2>Featured Books</h2>
+      <div class="book-grid">
+        <!-- Book cards will be dynamically inserted here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Addison Lilholt | 🍄 Made with mushroom magic</p>
+    <div class="footer-links">
+      <a href="mailto:addisonlilholt@gmail.com">Email</a> |
+      <a href="https://lilholt.netlify.app" target="_blank">Portfolio</a>
+    </div>
+  </footer>
+
+  <script>
+    // List your books here:
+    const books = [
+      {
+        img: 'assets/images/findingFungus.jpg',
+        title: 'Finding Fungus',
+        blurb: 'A curious adventure where a kid mistakes things for mushrooms (but also finds some too).',
+        link: 'https://www.lulu.com/shop/addison-lilholt/finding-fungus/paperback/product-7k656r4.html?page=1&pageSize=4'
+      },
+      {
+        img: 'assets/images/miniMyco.jpg',
+        title: "The Mini Mycologist's Guide to Foraging Wild Mushrooms",
+        blurb: 'Begin your mushroom journey young with this book.',
+        link: 'https://www.lulu.com/shop/addison-lilholt/the-mini-mycologists-foraging-guide-to-wild-mushrooms/paperback/product-q659556.html?page=1&pageSize=4'
+      },
+      {
+        img: 'assets/images/entomologicalGastronomy.jpg',
+        title: 'Entomological Gastronomy',
+        blurb: 'A culinary exploration of the world of insects.',
+        link: 'https://www.amazon.com/Entomological-Gastronomy-Addison-Lilholt/dp/1312792469'
+      },
+      {
+        img: 'assets/images/global.png',
+        title: 'Sheas Global Food Passport',
+        blurb: 'A guide to the world of food in a five-year-old set of eyes.',
+        link: 'https://www.lulu.com/shop/addison-lilholt/sheas-global-food-passport-volume-1/paperback/product-e7w8pg7.html?page=1&pageSize=4'
+      },
+      {
+        img: 'assets/images/guideToWissahickon.jpg',
+        title: 'Guide to the Wissahickon',
+        blurb: 'A guide to the Wissahickon Valley Park.',
+        link: 'https://www.lulu.com/shop/addison-lilholt/guide-to-the-wissahickon/ebook/product-1qzmew65.html?page=1&pageSize=4'
+      },
+      {
+        img: 'assets/images/party.png',
+        title: 'The Party Planner Diaries',
+        blurb: 'Mira gives you inside looks at her party plans and how to make them happen.',
+        link: 'https://www.lulu.com/shop/addison-lilholt/the-party-planner-diaries/paperback/product-kvk4g95.html?page=1&pageSize=4'
+      },
+      {
+        img: 'assets/images/zippyTheMoonWorm.jpg',
+        title: 'Zippy the Moon Worm',
+        blurb: 'A story about a worm who lives on the moon and dreams of going to Earth.',
+        link: 'https://www.lulu.com/shop/openai-chatgpt-and-addison-lilholt-and-openai-dall-e/zippy-the-moon-worm/hardcover/product-6mnvqj.html?page=1&pageSize=4'
+      }
+    ];
+
+    const bookGrid = document.querySelector('.book-grid');
+    books.forEach(book => {
+      const card = document.createElement('div');
+      card.className = 'book-card';
+      card.innerHTML = `
+        <img src="${book.img}" alt="${book.title} Book Cover">
+        <h3>${book.title}</h3>
+        <p>${book.blurb}</p>
+        <a href="${book.link}" target="_blank" class="btn">Buy Now</a>
+      `;
+      bookGrid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
