@@ -54,6 +54,8 @@
     background: url('../assets/images/forest.png') no-repeat center center;
     background-size: cover;
     height: 100vh;  /* Adjust height as needed */
+    margin-top: -10px; /* Accounts for the fixed navbar */
+
   }
   
   .hero-content {
@@ -69,16 +71,17 @@
   /* Overlay Cartoon Image */
   .hero-cartoon {
     position: absolute;
-    right: 20px;    /* adjust as needed */
-    bottom: 20px;   /* adjust as needed */
-    width: 200px;   /* adjust to control image size */
+    right: 6%; /* Move it slightly left from the right edge (was likely further right) */
+    bottom: 32%; /* Position it higher up from bottom (was likely closer to bottom) */
+    width: 250px; /* Adjust size as needed */
+    z-index: 10;
     animation: float 4s ease-in-out infinite;
   }
 
   /* Floating animation keyframes */
   @keyframes float {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-15px); }
     100% { transform: translateY(0); }
   }
 
@@ -92,6 +95,11 @@
     }
     .hero-content p {
       font-size: 1rem;
+    }
+    .hero-cartoon {
+      width: 80px;
+      right: 12%;
+      bottom: 18%;
     }
   }
   
@@ -174,7 +182,9 @@
     position: relative;
     background: url('../assets/images/abouthero.png') no-repeat center center;
     background-size: cover;
-    height: 70vh; /* adjust height as needed */
+    height: 80vh; /* adjust height as needed */
+    margin-top: -10px; /* Accounts for the fixed navbar */
+
   }
   
   .about-hero-content {
@@ -191,8 +201,11 @@
   .about-cartoon {
     width: 200px;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto; /* This will push it to the right */
+    margin-right: 50px; /* Adjust this value as needed */
     animation: float 4s ease-in-out infinite;
+    display: block; /* Ensure it responds to margin settings */
   }
 
   /* Keyframe animations for about page */
@@ -219,7 +232,10 @@
     width: 200px;
     border-radius: 50%;
     margin-bottom: 1.5rem;
+    margin-left: auto; /* This will push it to the right */
+    margin-right: -180px; /* Adjust this value as needed */
     animation: float 4s ease-in-out infinite;
+    display: block; /* Ensure it responds to margin settings */
   }
 
   .about-content h2 {
@@ -254,8 +270,9 @@
   /* Books Hero Section */
   .books-hero {
     position: relative;
-    height: 50vh; /* adjust height as needed */
+    height: 70vh; /* Increase this value to make it bigger */
     overflow: hidden;
+    margin-top: -10px; /* Accounts for the fixed navbar */
   }
 
   .books-hero-image {
@@ -267,23 +284,20 @@
 
   /* Extras Hero Section */
   .extras-hero {
+    position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 90vh; /* Match the books-hero height */
     overflow: hidden;
-    margin-top: 80px; /* for fixed navbar */
-    background: #f5f9f2;
-    padding: 2rem 0;
+    margin-top: -10px; /* Connect with the navbar */
+    padding: 0; /* Remove padding */
   }
 
   .extras-hero-image {
     width: 100%;
-    max-width: 1200px;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover; /* Cover instead of contain to fill the space */
     display: block;
-    border-radius: 0 0 24px 24px;
+    border-radius: 0; /* Remove border radius */
   }
 
   /* Extras cards grid */
@@ -366,25 +380,143 @@
     animation: float 4s ease-in-out infinite;
   }
 
-  /* Responsive */
-  @media (max-width: 900px) {
-    .extras-cards {
-      gap: 1rem;
-    }
-    .extra-card {
-      width: 90vw;
-      max-width: 350px;
-    }
-  }
+  /* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+.modal-content {
+  background-color: #f5f9f2;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: black;
+}
+
+/* Recipe styles */
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.recipe {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
+}
+
+.recipe h3 {
+  color: #5c8a34;
+  margin-top: 0;
+}
+
+.recipe-intro {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.recipe h4 {
+  margin: 1.5rem 0 0.5rem 0;
+  color: #444;
+}
+
+.recipe ul, .recipe ol {
+  padding-left: 1.5rem;
+}
+
+.recipe li {
+  margin-bottom: 0.5rem;
+}
+
+/* Download cards styling */
+.downloads-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.download-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.download-card:hover {
+  transform: translateY(-5px);
+}
+
+.download-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.download-button {
+  background: linear-gradient(45deg, #7ED4FD, #6D98E7);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin-top: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.download-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #6D98E7, #7ED4FD);
+}
+
+.close-party-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-party-modal:hover {
+  color: black;
+}
